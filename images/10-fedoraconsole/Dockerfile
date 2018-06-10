@@ -1,6 +1,6 @@
 FROM rancher/os-fedoraconsole-base
 # FROM amd64=fedora:27 arm64=arm64v8/fedora:27
-RUN dnf install -y iptables openssh-server rsync sudo vim-minimal less ca-certificates psmisc htop procps-ng iproute \
+RUN dnf install -y iptables openssh-server rsync sudo vim-minimal less ca-certificates psmisc htop procps-ng iproute kmod tar criu \
     && dnf clean all \
     && rm -rf /etc/ssh/*key*
 RUN groupadd --gid 1100 rancher \
